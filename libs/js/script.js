@@ -8,8 +8,8 @@ $(window).on('load', function () {
 
 function fetchCountryInfo() {
     const countryCode = $('#countryCode').val();
-    const username = 'your-geonames-username';
-    const url = `http://api.geonames.org/countryInfoJSON?country=${countryCode}&username=${username}`;
+    const username = 'bbek2024';
+    const url = `http://api.geonames.org/countryInfo?username=demo`;
 
     $.getJSON(url, function(data) {
         let result = '';
