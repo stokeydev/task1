@@ -3,24 +3,26 @@
 <head>
     <meta charset="utf-8">
     <title>GeoNames API Demo</title>
-    <meta name="description" content="Find out info on countries">
+    <meta name="description" content="A simple HTML app to interact with GeoNames APIs">
     <meta name="author" content="Berk Bektas">
-    <link rel="stylesheet" href="libs/css/style.css">
+    <link rel="stylesheet" href="libs/css/styles.css">
     <link rel="icon" href="favicon.png">
 </head>
 <body>
     <div id="preloader"></div>
 
-    <h1>GeoNames API Demo</h1>
+    <h1>Find some info</h1>
 
     <table border="1">
         <tr>
             <th>API Name</th>
             <th>API Description</th>
+            <th>User Inputs</th>
             <th>Results</th>
         </tr>
         <tr>
             <td>Country Info</td>
+            <td>Fetches information about a country based on its code.</td>
             <td>
                 <label for="countryCode">Country Code:</label>
                 <input type="text" id="countryCode" name="countryCode" placeholder="e.g., US">
@@ -30,6 +32,7 @@
         </tr>
         <tr>
             <td>Weather</td>
+            <td>Fetches weather information for a specific location (latitude and longitude are required).</td>
             <td>
                 <label for="weatherLat">Latitude:</label>
                 <input type="text" id="weatherLat" name="weatherLat" placeholder="e.g., 51.509865">
@@ -41,6 +44,7 @@
         </tr>
         <tr>
             <td>Timezone</td>
+            <td>Fetches timezone information for a specific location (latitude and longitude are required).</td>
             <td>
                 <label for="timezoneLat">Latitude:</label>
                 <input type="text" id="timezoneLat" name="timezoneLat" placeholder="e.g., 51.509865">

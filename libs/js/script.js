@@ -8,7 +8,7 @@ $(window).on('load', function () {
 
 function fetchCountryInfo() {
     const countryCode = $('#countryCode').val();
-    const username = 'bbek20204';
+    const username = 'your-geonames-username';
     const url = `http://api.geonames.org/countryInfoJSON?country=${countryCode}&username=${username}`;
 
     $.getJSON(url, function(data) {
@@ -25,7 +25,7 @@ function fetchCountryInfo() {
 function fetchWeather() {
     const lat = $('#weatherLat').val();
     const lng = $('#weatherLng').val();
-    const username = 'bbek2024';
+    const username = 'your-geonames-username';
     const url = `http://api.geonames.org/findNearByWeatherJSON?lat=${lat}&lng=${lng}&username=${username}`;
 
     $.getJSON(url, function(data) {
