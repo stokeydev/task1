@@ -1,98 +1,56 @@
 <!doctype html>
-
 <html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>GeoNames API Demo</title>
+    <meta name="description" content="A simple HTML app to interact with GeoNames APIs">
+    <meta name="author" content="Berk Bektas">
+    <link rel="stylesheet" href="/libs/css/style.css">
+    <link rel="icon" href="favicon.png">
+</head>
+<body>
+    <div id="preloader"></div>
 
-	<head>
+    <h1>GeoNames API Demo</h1>
 
-		<meta charset="utf-8">
+    <table border="1">
+        <tr>
+            <th>API Name</th>
+            <th>API Description</th>
+            <th>Results</th>
+        </tr>
+        <tr>
+            <td>Country Info</td>
+            <td>
+                <label for="countryCode">Country Code:</label>
+                <input type="text" id="countryCode" name="countryCode" placeholder="e.g., US">
+                <button onclick="fetchCountryInfo()">Fetch Info</button>
+            </td>
+            <td id="countryInfoResult"></td>
+        </tr>
+        <tr>
+            <td>Search</td>
+            <td>
+                <label for="query">Query:</label>
+                <input type="text" id="query" name="query" placeholder="e.g., London">
+                <button onclick="fetchSearch()">Search</button>
+            </td>
+            <td id="searchResult"></td>
+        </tr>
+        <tr>
+            <td>Timezone</td>
+            <td>
+                <label for="lat">Latitude:</label>
+                <input type="text" id="lat" name="lat" placeholder="e.g., 51.509865">
+                <label for="lng">Longitude:</label>
+                <input type="text" id="lng" name="lng" placeholder="e.g., -0.118092">
+                <button onclick="fetchTimezone()">Fetch Timezone</button>
+            </td>
+            <td id="timezoneResult"></td>
+        </tr>
+    </table>
 
-		<title>AJAX/PHP/CURL/JSON example</title>
-		<meta name="description" content="AJAX/PHP/CURL/JSON example">
-		<meta name="author" content="Paddy Evans">
-
-	</head>
-
-	<body>
-
-		<select id="selCountry">
-			<option value="GB">Great Britain</option>
-			<option value="FR">France</option>
-			<option value="DE">Germany</option>
-			<option value="US">USA</option>
-		</select>
-
-		<select id="selLanguage">
-			<option value="en">English</option>
-			<option value="fr">Francais</option>
-			<option value="de">Deutsche</option>
-		</select>
-
-		<button id="btnRun">Run</button>
-
-		<br><br>
-
-		<div id="divResults">
-			
-			<table>
-
-				<tr>
-					<td align="right">
-						Continent: 
-					</td>
-					<td id="txtContinent">
-						
-					</td>
-
-				</tr>
-
-				<tr>
-					<td align="right">
-						Capital: 
-					</td>
-					<td id="txtCapital">
-						
-					</td>
-
-				</tr>
-
-				<tr>
-					<td align="right">
-						Languages: 
-					</td>
-					<td id="txtLanguages">
-						
-					</td>
-
-				</tr>
-
-				<tr>
-					<td align="right">
-						Population: 
-					</td>
-					<td id="txtPopulation">
-						
-					</td>
-
-				</tr>
-
-				<tr>
-					<td align="right">
-						Area (km<sup>2</sup>): 
-					</td>
-					<td id="txtArea">
-						
-					</td>
-
-				</tr>
-
-
-			</table>
-
-		</div>
-
-		<script type="application/javascript" src="libs/js/jquery-2.2.3.min.js"></script>
-		<script type="application/javascript" src="libs/js/script.js"></script>
-
-	</body>
-
+    <script src="libs/js/jquery-2.2.3.min.js"></script>
+    <script src="libs/js/script.js"></script>
+</body>
 </html>
