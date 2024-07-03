@@ -24,7 +24,7 @@
             <td>Country Info</td>
             <td>Fetches information about a country based on its code.</td>
             <td>
-                <label for="countryCode">Country Code:</label>
+                <label for="countryCode">Country:</label>
                 <input type="text" id="countryCode" name="countryCode" placeholder="e.g., US">
                 <button onclick="fetchCountryInfo()">Fetch Info</button>
             </td>
@@ -34,10 +34,8 @@
             <td>Weather</td>
             <td>Fetches weather information for a specific location (latitude and longitude are required).</td>
             <td>
-                <label for="weatherLat">Latitude:</label>
-                <input type="text" id="weatherLat" name="weatherLat" placeholder="e.g., 51.509865">
-                <label for="weatherLng">Longitude:</label>
-                <input type="text" id="weatherLng" name="weatherLng" placeholder="e.g., -0.118092">
+                <label for="countryCode">Country:</label>
+                <input type="text" id="countryCode" name="countryCode" placeholder="e.g., US">
                 <button onclick="fetchWeather()">Fetch Weather</button>
             </td>
             <td id="weatherResult"></td>
@@ -46,10 +44,8 @@
             <td>Timezone</td>
             <td>Fetches timezone information for a specific location (latitude and longitude are required).</td>
             <td>
-                <label for="timezoneLat">Latitude:</label>
-                <input type="text" id="timezoneLat" name="timezoneLat" placeholder="e.g., 51.509865">
-                <label for="timezoneLng">Longitude:</label>
-                <input type="text" id="timezoneLng" name="timezoneLng" placeholder="e.g., -0.118092">
+                <label for="countryCode">Country:</label>
+                <input type="text" id="countryCode" name="countryCode" placeholder="e.g., US">
                 <button onclick="fetchTimezone()">Fetch Timezone</button>
             </td>
             <td id="timezoneResult"></td>
