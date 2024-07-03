@@ -9,7 +9,7 @@ $(window).on('load', function () {
 function fetchCountryInfo() {
     const countryCode = $('#countryCode').val();
     const username = 'bbek2024';
-    const url = `http://api.geonames.org/countryInfo?username=demo`;
+    const url = `http://api.geonames.org/countryInfoJSON?country=${countryCode}&username=${username}`;
 
     $.getJSON(url, function(data) {
         let result = '';
@@ -23,15 +23,14 @@ function fetchCountryInfo() {
 }
 
 function fetchWeather() {
-    const lat = $('#weatherLat').val();
-    const lng = $('#weatherLng').val();
-    const username = 'your-geonames-username';
-    const url = `http://api.geonames.org/findNearByWeatherJSON?lat=${lat}&lng=${lng}&username=${username}`;
+    const countryCode = $('#weatherCountryCode').val();
+    const username = 'bbek2024';
+    const url = `http://api.geonames.org/weatherJSON?country=${countryCode}&username=${username}`;
 
     $.getJSON(url, function(data) {
         let result = '';
-        if (data.weatherObservation) {
-            result = JSON.stringify(data.weatherObservation, null, 2);
+        if (data.weatherObservations && data.weatherObservations.length > 0) {
+            result = JSON.stringify(data.weatherObservations[0], null, 2);
         } else {
             result = 'No data found';
         }
@@ -40,15 +39,14 @@ function fetchWeather() {
 }
 
 function fetchTimezone() {
-    const lat = $('#timezoneLat').val();
-    const lng = $('#timezoneLng').val();
+    const countryCode = $('#timezoneCountryCode').val();
     const username = 'bbek2024';
-    const url = `http://api.geonames.org/timezoneJSON?lat=${lat}&lng=${lng}&username=${username}`;
+    const url = `http://api.geonames.org/timezoneJSON?country=${countryCode}&username=${username}`;
 
     $.getJSON(url, function(data) {
         let result = '';
-        if (data) {
-            result = JSON.stringify(data, null, 2);
+        if (data && data.timezone) {
+            result = JSON.stringify(data.timezone, null, 2);
         } else {
             result = 'No data found';
         }
