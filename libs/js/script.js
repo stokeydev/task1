@@ -9,7 +9,7 @@ $(window).on('load', function () {
 function fetchCountryInfo() {
     const countryCode = $('#countryCode').val();
     const username = 'bbek2024';
-    const url = `http://api.geonames.org/countryInfoJSON?country=${countryCode}&username=${username}`;
+    const url = `https://secure.geonames.org/countryInfoJSON?country=${countryCode}&username=${username}`;
 
     $.getJSON(url, function(data) {
         let result = '';
@@ -23,9 +23,9 @@ function fetchCountryInfo() {
 }
 
 function fetchWeather() {
-    const countryCode = $('#weatherCountryCode').val();
+    const city = $('#weatherCountryCode').val();
     const username = 'bbek2024';
-    const url = `http://api.geonames.org/weatherJSON?country=${countryCode}&username=${username}`;
+    const url = `https://secure.geonames.org/weatherJSON?q=${city}&username=${username}`;
 
     $.getJSON(url, function(data) {
         let result = '';
@@ -39,9 +39,9 @@ function fetchWeather() {
 }
 
 function fetchTimezone() {
-    const countryCode = $('#timezoneCountryCode').val();
+    const city = $('#timezoneCountryCode').val();
     const username = 'bbek2024';
-    const url = `http://api.geonames.org/timezoneJSON?country=${countryCode}&username=${username}`;
+    const url = `https://secure.geonames.org/timezoneJSON?q=${city}&username=${username}`;
 
     $.getJSON(url, function(data) {
         let result = '';
