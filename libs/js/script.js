@@ -8,9 +8,9 @@ $(window).on('load', function () {
 
 function fetchCountryInfo() {
     const countryCode = $('#countryCode').val();
-    const username = 'your-geonames-username';
+    const username = 'bbek20204';
     const url = `http://api.geonames.org/countryInfoJSON?country=${countryCode}&username=${username}`;
-    
+
     $.getJSON(url, function(data) {
         let result = '';
         if (data.geonames.length > 0) {
@@ -22,28 +22,29 @@ function fetchCountryInfo() {
     });
 }
 
-function fetchSearch() {
-    const query = $('#query').val();
-    const username = 'your-geonames-username';
-    const url = `http://api.geonames.org/searchJSON?q=${query}&maxRows=10&username=${username}`;
-    
+function fetchWeather() {
+    const lat = $('#weatherLat').val();
+    const lng = $('#weatherLng').val();
+    const username = 'bbek2024';
+    const url = `http://api.geonames.org/findNearByWeatherJSON?lat=${lat}&lng=${lng}&username=${username}`;
+
     $.getJSON(url, function(data) {
         let result = '';
-        if (data.geonames.length > 0) {
-            result = JSON.stringify(data.geonames, null, 2);
+        if (data.weatherObservation) {
+            result = JSON.stringify(data.weatherObservation, null, 2);
         } else {
             result = 'No data found';
         }
-        $('#searchResult').text(result);
+        $('#weatherResult').text(result);
     });
 }
 
 function fetchTimezone() {
-    const lat = $('#lat').val();
-    const lng = $('#lng').val();
-    const username = 'your-geonames-username';
+    const lat = $('#timezoneLat').val();
+    const lng = $('#timezoneLng').val();
+    const username = 'bbek2024';
     const url = `http://api.geonames.org/timezoneJSON?lat=${lat}&lng=${lng}&username=${username}`;
-    
+
     $.getJSON(url, function(data) {
         let result = '';
         if (data) {

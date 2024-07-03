@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>GeoNames API Demo</title>
-    <meta name="description" content="A simple HTML app to interact with GeoNames APIs">
+    <meta name="description" content="Find out info on countries">
     <meta name="author" content="Berk Bektas">
-    <link rel="stylesheet" href="/libs/css/style.css">
+    <link rel="stylesheet" href="libs/css/style.css">
     <link rel="icon" href="favicon.png">
 </head>
 <body>
@@ -29,21 +29,23 @@
             <td id="countryInfoResult"></td>
         </tr>
         <tr>
-            <td>Search</td>
+            <td>Weather</td>
             <td>
-                <label for="query">Query:</label>
-                <input type="text" id="query" name="query" placeholder="e.g., London">
-                <button onclick="fetchSearch()">Search</button>
+                <label for="weatherLat">Latitude:</label>
+                <input type="text" id="weatherLat" name="weatherLat" placeholder="e.g., 51.509865">
+                <label for="weatherLng">Longitude:</label>
+                <input type="text" id="weatherLng" name="weatherLng" placeholder="e.g., -0.118092">
+                <button onclick="fetchWeather()">Fetch Weather</button>
             </td>
-            <td id="searchResult"></td>
+            <td id="weatherResult"></td>
         </tr>
         <tr>
             <td>Timezone</td>
             <td>
-                <label for="lat">Latitude:</label>
-                <input type="text" id="lat" name="lat" placeholder="e.g., 51.509865">
-                <label for="lng">Longitude:</label>
-                <input type="text" id="lng" name="lng" placeholder="e.g., -0.118092">
+                <label for="timezoneLat">Latitude:</label>
+                <input type="text" id="timezoneLat" name="timezoneLat" placeholder="e.g., 51.509865">
+                <label for="timezoneLng">Longitude:</label>
+                <input type="text" id="timezoneLng" name="timezoneLng" placeholder="e.g., -0.118092">
                 <button onclick="fetchTimezone()">Fetch Timezone</button>
             </td>
             <td id="timezoneResult"></td>
