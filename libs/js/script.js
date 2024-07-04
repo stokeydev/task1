@@ -6,50 +6,50 @@ $(window).on('load', function () {
     }
 });
 
-function fetchCountryInfo() {
+function fetchCapital() {
     const countryCode = $('#countryCode').val();
     const username = 'bbek2024';
-    const url = `https://secure.geonames.org/countryInfoJSON?country=${countryCode}&username=${username}`;
+    const url = `https://secure.geonames.org/searchJSON?country=${countryCode}&featureCode=PPLC&maxRows=1&username=${username}`;
 
     $.getJSON(url, function(data) {
         let result = '';
         if (data.geonames.length > 0) {
-            result = JSON.stringify(data.geonames[0], null, 2);
+            result = data.geonames[0].name;
         } else {
             result = 'No data found';
         }
-        $('#countryInfoResult').text(result);
+        $('#capitalResult').text(result);
     });
 }
 
-function fetchWeather() {
-    const city = $('#weatherCountryCode').val();
+function fetchPopulation() {
+    const cityName = $('#cityName').val();
     const username = 'bbek2024';
-    const url = `https://secure.geonames.org/weatherJSON?q=${city}&username=${username}`;
+    const url = `https://secure.geonames.org/searchJSON?q=${cityName}&maxRows=1&username=${username}`;
 
     $.getJSON(url, function(data) {
         let result = '';
-        if (data.weatherObservations && data.weatherObservations.length > 0) {
-            result = JSON.stringify(data.weatherObservations[0], null, 2);
+        if (data.geonames.length > 0) {
+            result = data.geonames[0].population;
         } else {
             result = 'No data found';
         }
-        $('#weatherResult').text(result);
+        $('#populationResult').text(result);
     });
 }
 
-function fetchTimezone() {
-    const city = $('#timezoneCountryCode').val();
+function fetchOfficialName() {
+    const countryName = $('#countryName').val();
     const username = 'bbek2024';
-    const url = `https://secure.geonames.org/timezoneJSON?q=${city}&username=${username}`;
+    const url = `https://secure.geonames.org/searchJSON?q=${countryName}&featureClass=A&maxRows=1&username=${username}`;
 
     $.getJSON(url, function(data) {
         let result = '';
-        if (data && data.timezone) {
-            result = JSON.stringify(data.timezone, null, 2);
+        if (data.geonames.length > 0) {
+            result = data.geonames[0].toponymName;
         } else {
             result = 'No data found';
         }
-        $('#timezoneResult').text(result);
+        $('#officialNameResult').text(result);
     });
 }

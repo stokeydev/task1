@@ -21,34 +21,34 @@
             <th>Results</th>
         </tr>
         <tr>
-            <td>Country Info</td>
-            <td>Fetches information about a country based on its code.</td>
+            <td>Capital</td>
+            <td>Fetches the capital of a country.</td>
             <td>
                 <label for="countryCode">Country:</label>
-                <input type="text" id="countryCode" name="countryCode" placeholder="e.g., US">
-                <button onclick="fetchCountryInfo()">Fetch Info</button>
+                <input type="text" id="countryCode" name="countryCode" placeholder="e.g., FR">
+                <button onclick="fetchCapital()">Fetch Capital</button>
             </td>
-            <td id="countryInfoResult"></td>
+            <td id="capitalResult"></td>
         </tr>
         <tr>
-            <td>Weather</td>
-            <td>Fetches weather information for a specific location.</td>
+            <td>Population</td>
+            <td>Fetches population information for a specific Country.</td>
             <td>
-                <label for="countryCode">City:</label>
-                <input type="text" id="countryCode" name="countryCode" placeholder="e.g., Paris">
-                <button onclick="fetchWeather()">Fetch Weather</button>
+                <label for="cityName">Country:</label>
+                <input type="text" id="cityName" name="cityName" placeholder="e.g., UK">
+                <button onclick="fetchPopulation()">Fetch Population</button>
             </td>
-            <td id="weatherResult"></td>
+            <td id="populationResult"></td>
         </tr>
         <tr>
-            <td>Timezone</td>
-            <td>Fetches timezone information for a specific location.</td>
+            <td>Official name</td>
+            <td>Fetches the official name of a country.</td>
             <td>
-                <label for="countryCode">City:</label>
-                <input type="text" id="countryCode" name="countryCode" placeholder="e.g., London">
-                <button onclick="fetchTimezone()">Fetch Timezone</button>
+                <label for="countryName">Country:</label>
+                <input type="text" id="countryName" name="countryName" placeholder="e.g., France">
+                <button onclick="fetchOfficialName()">Fetch Official Name</button>
             </td>
-            <td id="timezoneResult"></td>
+            <td id="officialNameResult"></td>
         </tr>
     </table>
 
