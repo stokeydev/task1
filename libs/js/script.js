@@ -59,6 +59,6 @@ function fetchCountryGeocode() {
         } else {
             result += 'No data found';
         }
-        $('#results').html(result);
+        $('#country-geocoding-results').html(result);
     });
 }
