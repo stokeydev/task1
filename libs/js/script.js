@@ -11,7 +11,7 @@ function fetchEarthquakeData() {
     const south = $('#south').val();
     const east = $('#east').val();
     const west = $('#west').val();
-    const username = 'your_geonames_username';
+    const username = 'bbek2024';
     const url = `https://secure.geonames.org/earthquakesJSON?north=${north}&south=${south}&east=${east}&west=${west}&username=${username}`;
 
     $.getJSON(url, function(data) {
@@ -23,14 +23,14 @@ function fetchEarthquakeData() {
         } else {
             result += 'No data found';
         }
-        $('#results').html(result);
+        $('#country-geocoding-results').html(result);
     });
 }
 
 function fetchWeather() {
     const latitude = $('#latitude').val();
     const longitude = $('#longitude').val();
-    const username = 'your_geonames_username';
+    const username = 'bbek2024';
     const url = `https://secure.geonames.org/findNearByWeatherJSON?lat=${latitude}&lng=${longitude}&username=${username}`;
 
     $.getJSON(url, function(data) {
@@ -40,13 +40,13 @@ function fetchWeather() {
         } else {
             result += 'No data found';
         }
-        $('#results').html(result);
+        $('#country-geocoding-results').html(result);
     });
 }
 
 function fetchCountryGeocode() {
     const country = $('#country').val();
-    const username = 'your_geonames_username';
+    const username = 'bbek2024';
     const url = `https://secure.geonames.org/countryInfoJSON?country=${country}&username=${username}`;
 
     $.getJSON(url, function(data) {
