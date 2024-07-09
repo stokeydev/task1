@@ -16,41 +16,50 @@
     <table border="1">
         <tr>
             <th>API Name</th>
-            <th>API Description</th>
-            <th>User Inputs</th>
-            <th>Results</th>
+            <th>API Description & Parameters</th>
+            <th>Action</th>
         </tr>
         <tr>
-            <td>Capital</td>
-            <td>Fetches the capital of a country.</td>
+            <td>Earthquake Data</td>
             <td>
-                <label for="countryCode">Country:</label>
-                <input type="text" id="countryCode" name="countryCode" placeholder="e.g., FR">
-                <button onclick="fetchCapital()">Fetch Capital</button>
+                <label for="north">North:</label>
+                <input type="text" id="north" placeholder="North">
+                <label for="south">South:</label>
+                <input type="text" id="south" placeholder="South">
+                <label for="east">East:</label>
+                <input type="text" id="east" placeholder="East">
+                <label for="west">West:</label>
+                <input type="text" id="west" placeholder="West">
             </td>
-            <td id="capitalResult"></td>
+            <td>
+                <button onclick="fetchEarthquakeData()">Submit</button>
+            </td>
         </tr>
         <tr>
-            <td>Population</td>
-            <td>Fetches population information for a specific Country.</td>
+            <td>Weather</td>
             <td>
-                <label for="cityName">Country:</label>
-                <input type="text" id="cityName" name="cityName" placeholder="e.g., UK">
-                <button onclick="fetchPopulation()">Fetch Population</button>
+                <label for="latitude">Latitude:</label>
+                <input type="text" id="latitude" placeholder="Latitude">
+                <label for="longitude">Longitude:</label>
+                <input type="text" id="longitude" placeholder="Longitude">
             </td>
-            <td id="populationResult"></td>
+            <td>
+                <button onclick="fetchWeather()">Submit</button>
+            </td>
         </tr>
         <tr>
-            <td>Official name</td>
-            <td>Fetches the official name of a country.</td>
+            <td>Country Geocoding Webservice</td>
             <td>
-                <label for="countryName">Country:</label>
-                <input type="text" id="countryName" name="countryName" placeholder="e.g., France">
-                <button onclick="fetchOfficialName()">Fetch Official Name</button>
+                <label for="country">Country:</label>
+                <input type="text" id="country" placeholder="e.g., Mali">
             </td>
-            <td id="officialNameResult"></td>
+            <td>
+                <button onclick="fetchCountryGeocode()">Submit</button>
+            </td>
         </tr>
     </table>
+
+    <div id="results"></div>
 
     <script src="libs/js/jquery-2.2.3.min.js"></script>
     <script src="libs/js/script.js"></script>
